@@ -1,7 +1,14 @@
+using Yarn.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+//register database context - dependency injection
+builder.Services.AddDbContext<YarnDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("YarnContext")));
 
 var app = builder.Build();
 
