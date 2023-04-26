@@ -18650,6 +18650,21 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\amand\\Documents\\WTAMU\\Spring 2023\\CIDM 3312\\Projects\\final_project\\Pages\\Yarns\\Index.cshtml",
+      "TargetPath": "Pages\\Yarns\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\amand\\Documents\\WTAMU\\Spring 2023\\CIDM 3312\\Projects\\final_project\\Pages\\Yarns\\Delete.cshtml",
+      "TargetPath": "Pages\\Yarns\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\amand\\Documents\\WTAMU\\Spring 2023\\CIDM 3312\\Projects\\final_project\\Pages\\Yarns\\Edit.cshtml",
+      "TargetPath": "Pages\\Yarns\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\amand\\Documents\\WTAMU\\Spring 2023\\CIDM 3312\\Projects\\final_project\\Pages\\_ViewStart.cshtml",
       "TargetPath": "Pages\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -18665,8 +18680,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\amand\\Documents\\WTAMU\\Spring 2023\\CIDM 3312\\Projects\\final_project\\Pages\\Yarns\\Details.cshtml",
+      "TargetPath": "Pages\\Yarns\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\amand\\Documents\\WTAMU\\Spring 2023\\CIDM 3312\\Projects\\final_project\\Pages\\Shared\\_Layout.cshtml",
       "TargetPath": "Pages\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\amand\\Documents\\WTAMU\\Spring 2023\\CIDM 3312\\Projects\\final_project\\Pages\\Yarns\\Create.cshtml",
+      "TargetPath": "Pages\\Yarns\\Create.cshtml",
       "FileKind": "mvc"
     },
     {

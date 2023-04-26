@@ -1,4 +1,4 @@
-using Yarn.Models;
+using YarnCatalog.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +11,14 @@ builder.Services.AddDbContext<YarnDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("YarnContext")));
 
 var app = builder.Build();
+
+//call seed data method
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    SeedData.Initialize(services);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

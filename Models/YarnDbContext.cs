@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace Yarn.Models
+namespace YarnCatalog.Models
 {
     public class YarnDbContext : DbContext
     {
