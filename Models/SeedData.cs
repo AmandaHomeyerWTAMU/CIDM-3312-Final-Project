@@ -210,7 +210,7 @@ namespace YarnCatalog.Models
                         },
                         new Yarn
                         {
-                            Brand = "mYak",
+                            Brand = "MYak",
                             Name = "Baby Camel",
                             Weight = "Light",
                             Yardage = 190,
@@ -218,7 +218,7 @@ namespace YarnCatalog.Models
                         },
                         new Yarn
                         {
-                            Brand = "mYak",
+                            Brand = "MYak",
                             Name = "Tibetan Cloud Wool",
                             Weight = "Light",
                             Yardage = 328,
@@ -226,7 +226,7 @@ namespace YarnCatalog.Models
                         },
                         new Yarn
                         {
-                            Brand = "mYak",
+                            Brand = "MYak",
                             Name = "Baby Yak Lace",
                             Weight = "Super Fine",
                             Yardage = 370,

@@ -14,19 +14,56 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Yarn[0].Brand)
+                @*VARIABLE AND IF STATEMENT TO SET CURRENT SORT FOR THIS HEADER. REPEATED FOR EACH HEADER*@
+                @{
+                    var brandSort = "brand_asc";
+                    if (Model.CurrentSort == "brand_asc")
+                    {
+                        brandSort = "brand_desc";
+                    }
+                }
+                @*USED ASP TAG HELPER TO REMEMBER PAGE NUMBER WHEN SORTING*@
+                <a asp-page="./Index" asp-route-CurrentSort="@brandSort" asp-route-PageNum="@(Model.PageNum)">@Html.DisplayNameFor(model => model.Yarn[0].Brand)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Yarn[0].Name)
+                @{
+                    var nameSort = "name_asc";
+                    if (Model.CurrentSort == "name_asc")
+                    {
+                        nameSort = "name_desc";
+                    }
+                }
+                <a asp-page="./Index" asp-route-CurrentSort="@nameSort" asp-route-PageNum="@(Model.PageNum)">@Html.DisplayNameFor(model => model.Yarn[0].Name)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Yarn[0].Weight)
+                @{
+                    var weightSort = "weight_asc";
+                    if (Model.CurrentSort == "weight_asc")
+                    {
+                        weightSort = "weight_desc";
+                    }
+                }
+                <a asp-page="./Index" asp-route-CurrentSort="@weightSort" asp-route-PageNum="@(Model.PageNum)">@Html.DisplayNameFor(model => model.Yarn[0].Weight)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Yarn[0].Yardage)
+                @{
+                    var yardageSort = "yardage_asc";
+                    if (Model.CurrentSort == "yardage_asc")
+                    {
+                        yardageSort = "yardage_desc";
+                    }
+                }
+                <a asp-page="./Index" asp-route-CurrentSort="@yardageSort" asp-route-PageNum="@(Model.PageNum)">@Html.DisplayNameFor(model => model.Yarn[0].Yardage)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Yarn[0].Fiber)
+                @{
+                    var fiberSort = "fiber_asc";
+                    if (Model.CurrentSort == "fiber_asc")
+                    {
+                        fiberSort = "fiber_desc";
+                    }
+                }
+                <a asp-page="./Index" asp-route-CurrentSort="@fiberSort" asp-route-PageNum="@(Model.PageNum)">@Html.DisplayNameFor(model => model.Yarn[0].Fiber)</a>
             </th>
             <th></th>
         </tr>
@@ -66,11 +103,20 @@
         prevDisabled = "disabled";
     }
 
+    // Took a while to figure out a way to do this.  Added Count functionality on Model page.
+    var lastPage = ((Model.TotalRecords - 1) / 10) + 1;
+    var nextDisabled = "";
+    if (Model.PageNum == lastPage)
+    {
+        nextDisabled = "disabled";
+    }
+
 
 }
 <nav aria-label="Page Navigation">
     <ul class="pagination">
-        <li class="page-item @prevDisabled"><a class="page-link" asp-page="./Index" asp-route-PageNum="@Model.PageNum - 1">Previous</a></li>
-        <li class="page-item"><a class="page-link" asp-page="./Index" asp-route-PageNum="@Model.PageNum + 1">Next</a></li>
+        @*USED ASP TAG HELPER TO REMEMBER CURRENT SORT WHEN PAGING*@
+        <li class="page-item @prevDisabled"><a class="page-link" asp-page="./Index" asp-route-CurrentSort="@Model.CurrentSort" asp-route-PageNum="@(Model.PageNum - 1)" >Previous</a></li>
+        <li class="page-item @nextDisabled"><a class="page-link" asp-page="./Index" asp-route-CurrentSort="@Model.CurrentSort" asp-route-PageNum="@(Model.PageNum + 1)">Next</a></li>
     </ul>
 </nav>
