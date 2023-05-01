@@ -22,7 +22,13 @@ namespace YarnCatalog.Models
                             Name = "Super Saver",
                             Weight = "Medium",
                             Yardage = 364,
-                            Fiber = "Acrylic"
+                            Fiber = "Acrylic",
+                            Reviews = new List<Review> {
+                                new Review {Rating = 4, Message = "Good basic yarn for blankets, amigurumi, etc.  Would not suggest using for apparel."},
+                                new Review {Rating = 3, Message = "Okay yarn but not my first choice. I prefer natural fibers."}
+
+                            }
+
                         },
                         new Yarn
                         {
@@ -30,7 +36,11 @@ namespace YarnCatalog.Models
                             Name = "Simply Soft",
                             Weight = "Medium",
                             Yardage = 315,
-                            Fiber = "Acrylic"
+                            Fiber = "Acrylic",
+                            Reviews = new List<Review> {
+                                new Review {Rating = 5, Message = "Very soft!"}
+                                
+                            }
                         },
                         new Yarn
                         {
@@ -78,7 +88,12 @@ namespace YarnCatalog.Models
                             Name = "Kroy Socks",
                             Weight = "Super Fine",
                             Yardage = 166,
-                            Fiber = "Wool/Nylon"
+                            Fiber = "Wool/Nylon",
+                            Reviews = new List<Review> {
+                                new Review {Rating = 4, Message = "This yarn works up well but I wish there were more colors available."},
+                                new Review {Rating = 5, Message = "Great sock yarn."}
+
+                            }
                         },
                         new Yarn
                         {
@@ -102,7 +117,12 @@ namespace YarnCatalog.Models
                             Name = "Sugar'N Cream",
                             Weight = "Medium",
                             Yardage = 120,
-                            Fiber = "Cotton"
+                            Fiber = "Cotton",
+                            Reviews = new List<Review> {
+                                new Review {Rating = 1, Message = "Yuck!"},
+                                new Review {Rating = 3, Message = "As you would expect this yarn is acceptable but far from extraordinary. Makes good dishcloths."}
+
+                            }
                         },
                         new Yarn
                         {
@@ -142,7 +162,12 @@ namespace YarnCatalog.Models
                             Name = "Ferris Wheel",
                             Weight = "Medium",
                             Yardage = 270,
-                            Fiber = "Acrylic"
+                            Fiber = "Acrylic",
+                            Reviews = new List<Review> {
+                                new Review {Rating = 5, Message = "Great color schemes. Created a fabulous scarf."},
+                                
+
+                            }
                         },
                         new Yarn
                         {
@@ -150,7 +175,12 @@ namespace YarnCatalog.Models
                             Name = "Feels Like Butta",
                             Weight = "Medium",
                             Yardage = 218,
-                            Fiber = "Polyester"
+                            Fiber = "Polyester",
+                            Reviews = new List<Review> {
+                                new Review {Rating = 1, Message = "Absolutely horrible yarn. It may feel like 'butta' but I'm not sure what you could possibly make as far as apparel.  The drape is ghastly."},
+                                new Review {Rating = 2, Message = "Very difficult to work with. Not sure if I received a bad skein, but I had many problems with yarn consistency and breakage."}
+
+                            }
                         },
                         new Yarn
                         {
@@ -174,7 +204,12 @@ namespace YarnCatalog.Models
                             Name = "Rainbow",
                             Weight = "Fine",
                             Yardage = 186,
-                            Fiber = "Cotton"
+                            Fiber = "Cotton",
+                            Reviews = new List<Review> {
+                                new Review {Rating = 5, Message = "Fantastic yarn. The gradient makes any shawl or scarf look incredible."},
+                                new Review {Rating = 4, Message = "Good yarn but the loose stranding made it difficult for me to work with."}
+
+                            }
                         },
                         new Yarn
                         {
@@ -198,7 +233,11 @@ namespace YarnCatalog.Models
                             Name = "Pure Cashmere",
                             Weight = "Light",
                             Yardage = 149,
-                            Fiber = "Cashmere"
+                            Fiber = "Cashmere",
+                            Reviews = new List<Review> {
+                                new Review {Rating = 5, Message = "Feels amazing, however it was so pricey I have yet to actually use it.  I need to wait for the perfect project."},
+
+                            }
                         },
                         new Yarn
                         {

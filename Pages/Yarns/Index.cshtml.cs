@@ -34,12 +34,20 @@ namespace final_project.Pages_Yarns
         public int TotalRecords {get;set;}
 
 
+        [BindProperty(SupportsGet = true)]
+        public string? SearchString { get; set; }
+
         public async Task OnGetAsync()
         {
             if (_context.Yarns != null)
             {
                 // split original query into two parts to allow sorting with paging
                 var query = _context.Yarns.Select(y => y);
+
+                if (!String.IsNullOrEmpty(SearchString))
+                {
+                    query = query.Where(y => y.Brand.Contains(SearchString));
+                }
 
                 // Switch statement for each sorting option
                 switch (CurrentSort)
@@ -80,7 +88,14 @@ namespace final_project.Pages_Yarns
                 
                 // Added funtionality to keep current count of all record.
                 TotalRecords = await _context.Yarns.CountAsync();
+
+                 
             }
-        }
+
+
+
+            
+        } 
+
     }
 }

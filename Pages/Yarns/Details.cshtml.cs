@@ -18,7 +18,18 @@ namespace final_project.Pages_Yarns
             _context = context;
         }
 
-      public Yarn Yarn { get; set; } = default!; 
+        public Yarn Yarn { get; set; } = default!; 
+
+        [BindProperty]
+        public Review Review {get;set;} = default!;
+
+        [BindProperty]
+        public int ReviewIdToDelete {get;set;}
+
+        [BindProperty]
+        public int AddReview {get;set;}
+
+
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,7 +38,7 @@ namespace final_project.Pages_Yarns
                 return NotFound();
             }
 
-            var yarn = await _context.Yarns.FirstOrDefaultAsync(m => m.YarnId == id);
+            var yarn = await _context.Yarns.Include(y => y.Reviews).FirstOrDefaultAsync(y => y.YarnId == id);
             if (yarn == null)
             {
                 return NotFound();
@@ -38,5 +49,46 @@ namespace final_project.Pages_Yarns
             }
             return Page();
         }
+
+       /*  public IActionResult OnPostAddReview(int? id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            
+            var Yarn = _context.Yarns.FirstOrDefault(y => y.YarnId == AddReview);
+
+            _context.Reviews.Add(Review);
+
+            // _context.Add(Review);
+            _context.SaveChanges();
+
+            Yarn = _context.Yarns.Include(y => y.Reviews).First(y => y.YarnId == id);
+
+            return Page();
+        } */
+
+        /* public IActionResult OnPostDeleteReview(int? id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            // Find review in the database
+            var Review = _context.Reviews.FirstOrDefault(y => y.ReviewId == ReviewIdToDelete);
+
+            if (Review != null)
+            {
+                _context.Remove(Review);
+                _context.SaveChanges();
+            }
+
+            Yarn = _context.Yarns.Include(y => y.Reviews).First(y => y.YarnId == id);
+
+            return Page();
+        }
+ */
     }
 }

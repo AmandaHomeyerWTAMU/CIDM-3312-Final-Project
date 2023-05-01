@@ -11,5 +11,7 @@ namespace YarnCatalog.Models
             }
 
             public DbSet<Yarn> Yarns {get;set;} = default!;
+
+            public DbSet<Review> Reviews {get;set;} = default!;
     }
 }
