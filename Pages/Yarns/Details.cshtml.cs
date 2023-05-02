@@ -27,7 +27,7 @@ namespace final_project.Pages_Yarns
         public int ReviewIdToDelete {get;set;}
 
         [BindProperty]
-        public int AddReview {get;set;}
+        public Review AddReview {get;set;} = default!;
 
 
 
@@ -50,26 +50,27 @@ namespace final_project.Pages_Yarns
             return Page();
         }
 
-       /*  public IActionResult OnPostAddReview(int? id)
+        // THIS CODE IS CAUSING AN ERROR IN MY FOR LOOP - LINE 83 - @foreach (var y in Model.Yarn.Reviews)
+        public IActionResult OnPost(int id)
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
             
-            var Yarn = _context.Yarns.FirstOrDefault(y => y.YarnId == AddReview);
+            AddReview.YarnId = id;
+            
+            _context.Reviews.Add(AddReview);
 
-            _context.Reviews.Add(Review);
-
-            // _context.Add(Review);
             _context.SaveChanges();
 
-            Yarn = _context.Yarns.Include(y => y.Reviews).First(y => y.YarnId == id);
+            Yarn = _context.Yarns.Include(y => y.Reviews).First(y => y.YarnId == id); 
 
             return Page();
-        } */
+        } 
 
-        /* public IActionResult OnPostDeleteReview(int? id)
+        //THIS CODE IS CAUSING AN ERROR IN MY FOR LOOP - LINE 83 - @foreach (var y in Model.Yarn.Reviews)
+        public IActionResult OnPostDeleteReview(int? id)
         {
             if (!ModelState.IsValid)
             {
@@ -77,11 +78,11 @@ namespace final_project.Pages_Yarns
             }
 
             // Find review in the database
-            var Review = _context.Reviews.FirstOrDefault(y => y.ReviewId == ReviewIdToDelete);
+            var ReviewToDelete = _context.Reviews.FirstOrDefault(r => r.ReviewId == ReviewIdToDelete);
 
-            if (Review != null)
+            if (ReviewToDelete != null)
             {
-                _context.Remove(Review);
+                _context.Remove(ReviewToDelete);
                 _context.SaveChanges();
             }
 
@@ -89,6 +90,6 @@ namespace final_project.Pages_Yarns
 
             return Page();
         }
- */
+ 
     }
 }
