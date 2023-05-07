@@ -37,6 +37,10 @@ namespace final_project.Pages_Yarns
         [BindProperty(SupportsGet = true)]
         public string? SearchString { get; set; }
 
+        public double AvgRating {get;set;}
+
+
+
         public async Task OnGetAsync()
         {
             if (_context.Yarns != null)
@@ -82,6 +86,8 @@ namespace final_project.Pages_Yarns
                     case "fiber_desc":
                         query = query.OrderByDescending(y => y.Fiber);
                         break;
+                 
+                        
                 }
 
                 Yarn = await query.Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
@@ -89,6 +95,7 @@ namespace final_project.Pages_Yarns
                 // Added funtionality to keep current count of all record.
                 TotalRecords = await _context.Yarns.CountAsync();
 
+                
                  
             }
 

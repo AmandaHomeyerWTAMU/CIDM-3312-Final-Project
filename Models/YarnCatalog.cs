@@ -26,6 +26,7 @@ namespace YarnCatalog.Models
         [StringLength(30)]
         public string Fiber {get;set;} = string.Empty;
 
+
         public List<Review> Reviews {get;set;} = new List<Review>(); // navigation property
     }
 }

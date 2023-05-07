@@ -55,18 +55,18 @@
             <div class="col-sm-10">
                 <form method="post">
                     <div class="form-group">
-                        <label asp-for="AddReview.Rating" class="control-label"></label>
-                        <input asp-for="AddReview.Rating" class="form-control" />
-                        <span asp-validation-for="AddReview.Rating" class="text-danger"></span>
+                        <label asp-for="Review.Rating" class="control-label"></label>
+                        <input asp-for="Review.Rating" class="form-control" />
+                        <span asp-validation-for="Review.Rating" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="AddReview.Message" class="control-label"></label>
-                        <input asp-for="AddReview.Message" class="form-control" />
-                        <span asp-validation-for="AddReview.Message" class="text-danger"></span>
+                        <label asp-for="Review.Message" class="control-label"></label>
+                        <input asp-for="Review.Message" class="form-control" />
+                        <span asp-validation-for="Review.Message" class="text-danger"></span>
                     </div>
                     <br />
                     <div class="form-group">
-                        <input type="hidden" asp-for="AddReview" />
+                        <input type="hidden" asp-for="Review.YarnId" value="@Model.Yarn?.YarnId" />
                         <input type="submit" value="Submit"  class="btn btn-primary" />
                     </div>
                     <br />
@@ -101,7 +101,7 @@
                     <dt class="col-sm-1">
                         <form method="post">
                             <input type="hidden" asp-for="ReviewIdToDelete" value="@r.ReviewId" />
-                            <input type="submit" asp-asp-page-handler="DeleteReview" asp-route-id="@Model.Yarn.YarnId" value="Delete Review" />
+                            <input type="submit" asp-page-handler="DeleteReview" asp-route-id="@Model.Yarn.YarnId" value="Delete Review" />
                         </form>
                     </dt>
                     
